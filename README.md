@@ -150,7 +150,8 @@ Run `lerna --help` to see all available commands and options.
       "npmClientArgs": ["--no-package-lock"]
     }
   },
-  "packages": ["packages/*"]
+  "packages": ["packages/*"],
+  "stream": false
 }
 ```
 
@@ -162,6 +163,7 @@ Run `lerna --help` to see all available commands and options.
 - `command.bootstrap.npmClientArgs`: array of strings that will be passed as arguments directly to `npm install` during the `lerna bootstrap` command.
 - `command.bootstrap.scope`: an array of globs that restricts which packages will be bootstrapped when running the `lerna bootstrap` command.
 - `packages`: Array of globs to use as package locations.
+- `stream`: Stream output with lines prefixed by package. (`false` by default)
 
 The packages config in `lerna.json` is a list of globs that match directories containing a `package.json`, which is how lerna recognizes "leaf" packages (vs the "root" `package.json`, which is intended to manage the dev dependencies and scripts for the entire repo).
 
